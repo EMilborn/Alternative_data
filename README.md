@@ -1,4 +1,11 @@
-# Alternative_data
+# PROJECT 0: SMOKING IS BAD!
+
+**Team Alternative Data:** Kate Ly Johnston, Elias Milborn, Joel Ye, Nobel Gautam
+
+*softdev pd9 -- spring**
+
+
+# DESCRIPTION: 
 
 Our project visualizes the tobacco-smoking habits of middle and high schoolers in the US per state. The data is given by the following link: 
 
