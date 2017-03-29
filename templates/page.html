@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Smoking is Bad</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/page.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="pagePlaceHolder" style="max-height: 95vh; display: flex; align-items: center; justify-content: center;">
+        <h1 style = "font-weight: bold;">Smoking is Bad</h1>
+    </div>
+
+    <div class="row">
+      <div class="span12">
+	<div id="svgContainer">
+    <svg id="svgImage" xmlns="http://www.w3.org/2000/svg" width = "1000", height = "500" style="border:1px solid #000000"/>
+    <!--TEMPORARY BORDER-->
+	</div>
+      </div>
+    </div>
+     <br>
+
+     
+    <div class="row">
+      <div class="span12">
+
+	<div id="ctrlPanel">
+       <button id="resetbtn" class="btn btn-danger">
+	 <span class="glyphicon glyphicon-repeat"></span>
+       </button>
+       <button id="playbtn" class="btn btn-success">
+	 <span class="glyphicon glyphicon-play">
+	   <!--glyphicon glyphicon-pause"-->
+	 </span>
+       </button>
+
+       <input id="ex1" data-slider-id='timeSlider' type="text" data-slider-min="2000" data-slider-max="2015" data-slider-step="1" data-slider-value="14"/>
+    
+	</div>
+      </div>
+    </div>
+
+    <br><br>
+    <footer>
+        <div class="container">
+            <span id="copyright" style = "display: flex; align-items: center; justify-content:center;">&copy; 2017 Alternative Data</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/script.js"></script>
+    
+</body>
+
+</html>
