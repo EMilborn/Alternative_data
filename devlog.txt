@@ -1,3 +1,7 @@
 kateJ -- 2017-03-29 14:30-14:45
    the project is born!
    added all initial files and data, started on flask app
+
+kateJ -- 2017-03-30
+   started parsing through csv file
+   wish other people would update the devlog!!!
