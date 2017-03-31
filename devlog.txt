@@ -5,3 +5,8 @@ kateJ -- 2017-03-29 14:30-14:45
 kateJ -- 2017-03-30
    started parsing through csv file
    wish other people would update the devlog!!!
+
+kateJ -- 2017-03-31
+   looking for new data because our original data has major issues... oh well
+   also, tell me why there are three entries in this file and they're all by ME.
+   COME ON, TEAM!!!!!!!!!
