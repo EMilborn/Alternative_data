@@ -10,7 +10,6 @@ middleschool = {}
 def constructDicts():
 
     # row[0] = year, row[2] = state, row[10] = percentage
-
     for row in reader:
         if ( row[17] == "Overall" and row[5] == "Smoking Status" and row[7] == "Ever"):
 
@@ -29,6 +28,9 @@ def constructDicts():
                     middleschool[row[2]].append(row[10])
                 else:
                     middleschool[row[2]] = [row[0],row[10]]
+
+    #print highschool
+    #print middleschool
 
                 
 constructDicts()
