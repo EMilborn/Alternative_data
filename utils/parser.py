@@ -1,36 +1,34 @@
 import csv
 
 
-data = open("../data/data.csv", "r")
-reader = csv.reader(data)
+drugs = open("../data/data.csv", "r")
+reader = csv.reader(drugs)
 highschool = {}
-middleschool = {}
+college = {}
 
 
 def constructDicts():
 
-    # row[0] = year, row[2] = state, row[10] = percentage
+    #row[129] = year, row[66] = state
+    #row[51] = percentage for high school-aged people, row[52] = percentage for college-aged people
+    
     for row in reader:
-        if ( row[17] == "Overall" and row[5] == "Smoking Status" and row[7] == "Ever"):
 
-            #high school students only
-            if ( row[20] == "High School" ):
-                if row[2] in highschool.keys(): #to avoid overwriting data
-                    highschool[row[2]].append(row[0])
-                    highschool[row[2]].append(row[10])
-                else:
-                    highschool[row[2]] = [row[0],row[10]]
+        state = row[66]
 
-            #middle school students only
-            if ( row[20] == "Middle School" ):
-                if row[2] in middleschool.keys(): #to avoid overwriting data
-                    middleschool[row[2]].append(row[0])
-                    middleschool[row[2]].append(row[10])
-                else:
-                    middleschool[row[2]] = [row[0],row[10]]
+        if ( state in highschool.keys() ): #to avoid overwriting data
+             
+             highschool[state].append(row[129]) #add year
+             highschool[state].append(row[57]) #add rate
+             college[state].append(row[129])
+             college[state].append(row[58])
+
+        else:
+             highschool[state] = [row[129],row[57]]
+             college[state] = [row[129],row[58]]
 
     #print highschool
-    #print middleschool
+    #print college
 
                 
 constructDicts()
