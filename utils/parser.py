@@ -10,7 +10,8 @@ college = {}
 def constructDicts():
 
     #row[129] = year, row[66] = state
-    #row[51] = percentage for high school-aged people, row[52] = percentage for college-aged people
+    #row[51] = percentage for high school-aged people
+    #row[52] = percentage for college-aged people
     
     for row in reader:
 
@@ -31,4 +32,41 @@ def constructDicts():
     #print college
 
                 
+def getHPercentage(state, year):
+
+    if ( state in highschool.keys() ):
+        years = highschool.get(state)
+        l = len(years)
+        x = 0
+        while ( x < l ):
+            if ( years[x] == year ):
+                return years[x+1]
+            else:
+                x += 2
+        return -1
+
+    else:
+        return -1
+
+    
+def getCPercentage(state, year):
+
+    if ( state in college.keys() ):
+        years = college.get(state)
+        l = len(years)
+        x = 0
+        while ( x < l ):
+            if ( years[x] == year ):
+                return years[x+1]
+            else:
+                x += 2
+        return -1
+
+    else:
+        return -1
+
+
 constructDicts()
+
+#print getHPercentage("Montana", "2005")
+#print getCPercentage("California", "2011")

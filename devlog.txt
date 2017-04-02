@@ -11,3 +11,8 @@ kateJ -- 2017-03-31 14:30-15:35
    update: found the new data, and rewrote the functions for the new csv file!
    also, tell me why there are three entries in this file and they're all by ME.
    COME ON, TEAM!!!!!!!!!
+
+kateJ -- 2017-04-02 17:00-18:00
+   wrote functions for parsing/extrapolating data by year/state/age
+   updated project descriptions with new goals
+   why isn't anyone updating this devlog
