@@ -28,8 +28,11 @@ def constructDicts():
              highschool[state] = [row[129],row[57]]
              college[state] = [row[129],row[58]]
 
-    #print highschool
+    print highschool
     #print college
+
+
+constructDicts()
 
                 
 def getHPercentage(state, year):
@@ -65,8 +68,6 @@ def getCPercentage(state, year):
     else:
         return -1
 
-
-constructDicts()
 
 #print getHPercentage("Montana", "2005")
 #print getCPercentage("California", "2011")
