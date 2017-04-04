@@ -16,3 +16,6 @@ kateJ -- 2017-04-02 17:00-18:00
    wrote functions for parsing/extrapolating data by year/state/age
    updated project descriptions with new goals
    why isn't anyone updating this devlog
+
+kateJ -- 2017-04-04 14:30-15:35
+   data is now accessible from app.py

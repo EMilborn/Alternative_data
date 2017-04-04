@@ -1,4 +1,6 @@
 import csv
+import urllib
+import os.path
 
 
 drugs = open("../data/data.csv", "r")
@@ -28,46 +30,48 @@ def constructDicts():
              highschool[state] = [row[129],row[57]]
              college[state] = [row[129],row[58]]
 
-    print highschool
+    #print highschool
     #print college
 
 
 constructDicts()
 
                 
-def getHPercentage(state, year):
+def getHPercentages(year):
 
-    if ( state in highschool.keys() ):
+    results = {}
+
+    for state in highschool.keys():
         years = highschool.get(state)
         l = len(years)
         x = 0
         while ( x < l ):
             if ( years[x] == year ):
-                return years[x+1]
+                results[state] = years[x+1]
+                x = l
             else:
                 x += 2
-        return -1
 
-    else:
-        return -1
+    return results
 
     
-def getCPercentage(state, year):
+def getCPercentages(year):
 
-    if ( state in college.keys() ):
+    results = {}
+
+    for state in college.keys():
         years = college.get(state)
         l = len(years)
         x = 0
         while ( x < l ):
             if ( years[x] == year ):
-                return years[x+1]
+                results[state] = years[x+1]
+                x = l
             else:
                 x += 2
-        return -1
 
-    else:
-        return -1
+    return results
 
 
-#print getHPercentage("Montana", "2005")
-#print getCPercentage("California", "2011")
+#print getHPercentages("2005")
+#print getCPercentages("2011")
