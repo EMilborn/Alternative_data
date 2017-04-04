@@ -1,23 +1,32 @@
 var resetBtn = document.getElementById("resetbtn");
 var playBtn = document.getElementById("playbtn");
-var playing = false;
+var rewindBtn = document.getElementById("rewindbtn");
+var playing = 0;
 var slider = document.getElementById("timeSlider");
 var playBtnIc = document.getElementById("playBtnIcon");
+var rewindBtnIc = document.getElementById("rewindBtnIcon");
 var rid;
+var frameTime = 500;
 
 var resetSlider = function(){
 
-    slider.setAttribute("value","2002");
+    slider.value = slider.getAttribute("min");
         
 }
 
-var playPause = function(){
+var playPause = function(dir){
 
     if (!playing){
-	playing = true;
+	if (slider.value == slider.getAttribute("max"))
+	    resetSlider();
+	playing = dir;
 	playBtnIc.setAttribute("class", "glyphicon glyphicon-pause");
-	play();
+	if (dir == 1)
+	    play();
+	else if (dir == -1)
+	    rewind();
     }
+    
     else{
 	playing = false;
 	playBtnIc.setAttribute("class", "glyphicon glyphicon-play");
@@ -33,22 +42,48 @@ var play = function(){
     var anim = function(){setTimeout(function(){
 	    
 	slider.stepUp();	    
-	console.log("playing");
-	console.log("value = " + slider.getAttribute("value"));
 	
-	if (playing && slider.getAttribute("value") < slider.getAttribute("max")){
+	if (playing && slider.value < slider.getAttribute("max")){
 
 	    rid = window.requestAnimationFrame(anim);
 
 	}
 
-	if (slider.getAttribute("value") == slider.getAttribute("max")){
+	if (slider.value == slider.getAttribute("max")){
 
-	    playPause();
+	    playPause(1);
+	    playBtnIc.setAttribute("class", "glyphicon glyphicon-repeat");
 	    
 	}
 	
-    }, 500);}
+    }, frameTime);}
+
+    anim();
+    
+}
+
+var rewind = function(){
+    
+    window.cancelAnimationFrame(rid);
+
+
+    var anim = function(){setTimeout(function(){
+	    
+	slider.stepDown();	    
+	
+	if (playing && slider.value > slider.getAttribute("min")){
+
+	    rid = window.requestAnimationFrame(anim);
+
+	}
+
+	if (slider.value == slider.getAttribute("min")){
+
+	    playPause(-1);
+	    
+	}
+	
+    }, frameTime);}
 
     anim();
     
@@ -56,4 +91,6 @@ var play = function(){
 
 
 resetBtn.addEventListener("click", resetSlider);
+rewindBtn.addEventListener("click", rewind);
 playBtn.addEventListener("click", playPause);
+window.onLoad = resetSlider();
