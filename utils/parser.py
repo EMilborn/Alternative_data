@@ -3,7 +3,7 @@ import urllib
 import os.path
 
 
-drugs = open("../data/data.csv", "r")
+drugs = open("data/data.csv", "r")
 reader = csv.reader(drugs)
 highschool = {}
 college = {}
@@ -71,7 +71,3 @@ def getCPercentages(year):
                 x += 2
 
     return results
-
-
-#print getHPercentages("2005")
-#print getCPercentages("2011")
