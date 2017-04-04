@@ -9,12 +9,14 @@ app.secret_key = "eliasgoestostanford"
 @app.route("/", methods=['POST','GET'])
 def root():
 
-    request.args['year', 'school']
+    result = {}
 
-    if ( school == "College" ):
-        result = data.getCPercentages(year)
-    else:
-        result = data.getHPercentages(year)
+    #request.args['year', 'school']
+
+    #if ( school == "College" ):
+        #result = data.getCPercentages(year)
+    #else:
+        #result = data.getHPercentages(year)
     
     return render_template("page.html", states = result)
 
