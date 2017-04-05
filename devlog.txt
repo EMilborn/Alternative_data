@@ -9,7 +9,7 @@ kateJ -- 2017-03-30 14:30-15:35
 kateJ -- 2017-03-31 14:30-15:35
    looking for new data because our original data has major issues... oh well
    update: found the new data, and rewrote the functions for the new csv file!
-   
+
 kateJ -- 2017-04-02 17:00-18:00
    wrote functions for parsing/extrapolating data by year/state/age
    updated project descriptions with new goals
@@ -38,3 +38,8 @@ EliasM -- 2017-04-04 7:00-10:00
 
 joelY -- 2017-04-04 23:05
   formatting set up for advertising information
+
+nobelG -- 2017-04-05 2:41
+    Integrated data from back-end into the front-end
+    Made map reflect smoking data
+    Wrapped up project
