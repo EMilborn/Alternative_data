@@ -39,7 +39,10 @@ EliasM -- 2017-04-04 7:00-10:00
 joelY -- 2017-04-04 23:05
   formatting set up for advertising information
 
+EliasM -- 2017-04-04 23:30
+  bug fixes
+
 nobelG -- 2017-04-05 2:41
-    Integrated data from back-end into the front-end
-    Made map reflect smoking data
-    Wrapped up project
+  Integrated data from back-end into the front-end
+  Made map reflect smoking data
+  Wrapped up project
