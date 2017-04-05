@@ -59,15 +59,18 @@ var addStates = function(){
 		  ["Connecticut", 10, 3],
 		  ["Maine", 11, 0],
 		  ["New Hampshire", 11, 1],
-		  ["Massachusetts", 11, 2]];
-    for (i = 0; i < 50, i++){
+		  ["Massachusetts", 11, 2]
+		 ];
+    
+    for (i = 0; i < 50; i++){
 	var state = states[i];
-	var newState = document.createElement(rect);
+	var newState = document.createElement("rect");
 	newState.setAttribute("id", state[0]);
 	newState.setAttribute("width", String(width));
 	newState.setAttribute("height", String(width));
 	newState.setAttribute("cx", String(width/2 + width*state[1]));
 	newState.setAttribute("cy", String(width/2 + width*state[2]));
+	newState.setAttribute("style", "fill:red;");
 	s.appendChild(newState);			
     };	   
 };
