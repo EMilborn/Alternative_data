@@ -70,7 +70,7 @@ var addStates = function(){
 	newState.setAttribute("height", String(width));
 	newState.setAttribute("x", String(width/2 + width*state[1]));
 	newState.setAttribute("y", String(width/2 + width*state[2]));
-	newState.setAttribute("fill", "red");
+	newState.setAttribute("stroke", "white");
 	s.appendChild(newState);			
     };	   
 };
