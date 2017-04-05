@@ -66,14 +66,13 @@ var addStates = function(){
     
     for (i = 0; i < 50; i++){
 	var state = states[i];
-	var newState = document.createElement("rect");
+	var newState = document.createElementNS("http://www.w3.org/2000/svg", "rect");
 	newState.setAttribute("id", state[0]);
 	newState.setAttribute("width", String(width));
 	newState.setAttribute("height", String(width));
 	newState.setAttribute("x", String(width/2 + width*state[1]));
 	newState.setAttribute("y", String(width/2 + width*state[2]));
-	newState.setAttribute("style", "fill:red");
-//	newState.setAttribute("fill","red");
+	newState.setAttribute("stroke", "white");
 	s.appendChild(newState);			
     };	   
 };
