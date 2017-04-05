@@ -211,7 +211,7 @@ var retrieveData = function(){
     $.ajax({
 	url: "/getCollege/",
 	type: "POST",
-	data: undefined,
+	data: {"year": getSlider()},
 	success: function(d){
 	    dataBank["College"] = JSON.parse(d);
 	}
@@ -219,7 +219,7 @@ var retrieveData = function(){
     $.ajax({
 	url: "/getHS/",
 	type: "POST",
-	data: undefined,
+	data: {"year": getSlider()}
 	success: function(d){
 	    dataBank["HS"] = JSON.parse(d);
 	}

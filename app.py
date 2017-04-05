@@ -30,10 +30,12 @@ def new():
 
 @app.route("/getCollege")
 def collegeData():
+    year = request.args["year"]
     return json.dumps(data.getCPercentages(year))
 
 @app.route("/getHS")
-def collegeData():
+def hsData():
+    year = request.args["year"]
     return json.dumps(data.getHPercentages(year))
 
 if __name__ == '__main__':
