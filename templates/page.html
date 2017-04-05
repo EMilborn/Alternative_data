@@ -24,13 +24,26 @@
     <div id="pagePlaceHolder" style="max-height: 95vh; display: flex; align-items: center; justify-content: center;">
       <h1 style = "font-weight: bold;">Smoking is Bad</h1>
     </div>
-
-    <div class="row">
-      <div class="span12" align = "center">
-	<div id="svgContainer">
-	  <svg id = "s" width = "1000" height = "500">
-	  </svg>
-	  <!--TEMPORARY BORDER-->
+    <div class = "container-fluid">
+      
+      <div class="row" >
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-2 text-right align-middle">
+	  <div class="radio">
+	    <label><input type="radio" name="optradio" id="hsRadio" defaultValue = "true">HS</label>
+	  </div>
+	  <div class="radio">
+	    <label><input type="radio" name="optradio" id="colRadio">College</label>
+	  </div>
+	</div>
+	<div class="col-md-9 text-left" align = "center">
+	  <div id="svgContainer">
+	    <svg id="s" xmlns="http://www.w3.org/2000/svg" width = "1000", height = "500" style="border:1px solid #000000"/>
+	    
+	    
+	    <!--TEMPORARY BORDER-->
+	  </div>
 	</div>
       </div>
     </div>
@@ -39,8 +52,8 @@
 
     <div id="ctrlPanel" class = "container-fluid">
       <div class="row">
-	<div class="col-md-3"></div>
-	<div class="col-md-3">
+	<div class="col-md-2"></div>
+	<div class="col-md-3 text-right">
 	  
 	  <button id="resetbtn" class="btn btn-danger">
 	    <span class="glyphicon glyphicon-repeat"></span>
@@ -56,8 +69,8 @@
 
 	</div>
 
-	<div class="col-md-3">
-	  <input type="range" step="1" min="2002" max="2015" id="timeSlider" defaultValue="2002"/>
+	<div class="col-md-3 text-left">
+	  <input type="range" step="1" min="2002" max="2015" id="timeSlider"/>
 	</div>
 
       </div>

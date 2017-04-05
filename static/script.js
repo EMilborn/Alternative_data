@@ -7,6 +7,8 @@ var playBtnIc = document.getElementById("playBtnIcon");
 var rewindBtnIc = document.getElementById("rewindBtnIcon");
 var rid;
 var frameTime = 500;
+var hsRadio = document.getElementById("hsRadio");
+var colRadio = document.getElementById("colRadio");
 
 var addStates = function(){
     var width = 50;
@@ -74,7 +76,6 @@ var addStates = function(){
 	s.appendChild(newState);			
     };	   
 };
-addStates()
 
 var resetSlider = function(){
 
@@ -82,23 +83,50 @@ var resetSlider = function(){
         
 }
 
-var playPause = function(dir){
+var playForward = function(){
+    playing = 1;
+    playBtnIc.setAttribute("class", "glyphicon glyphicon-pause");
+    play();
+}
+
+var playBackward = function(){
+    playing = -1;
+    rewindBtnIc.setAttribute("class", "glyphicon glyphicon-pause");
+    rewind();
+}
+
+var masterControl = function(dir){
 
     if (!playing){
-	if (slider.value == slider.getAttribute("max"))
-	    resetSlider();
-	playing = dir;
-	playBtnIc.setAttribute("class", "glyphicon glyphicon-pause");
-	if (dir == 1)
-	    play();
-	else if (dir == -1)
-	    rewind();
+	if (slider.value == slider.getAttribute("max")){
+	    if (dir == 1) resetSlider();
+	    else playBtnIc.setAttribute("class", "glyphicon glyphicon-play");
+	}
+	
+	if (dir == 1)	    playForward();
+	else if (dir == -1) playBackward();
     }
     
-    else{
-	playing = false;
+    else if (playing == 1){
 	playBtnIc.setAttribute("class", "glyphicon glyphicon-play");
+	if (dir ==  1) playing = 0;
+	else {
+	    playing = -1;
+	    playBackward();
+	}
     }
+
+    else if (playing == -1){
+	rewindBtnIc.setAttribute("class", "glyphicon glyphicon-backward");
+	if (dir == 1) {
+	    playing = 1;
+	    playForward();
+	}
+	else playing = 0;
+
+    }
+
+    else console.log("that's not good");
     
 }
 
@@ -106,12 +134,12 @@ var play = function(){
 
     window.cancelAnimationFrame(rid);
 
-    console.log("max = " + slider.getAttribute("max"));
+    //console.log("max = " + slider.getAttribute("max"));
     var anim = function(){setTimeout(function(){
 	    
 	slider.stepUp();	    
-	
-	if (playing && slider.value < slider.getAttribute("max")){
+	console.log("forwarding");
+	if (playing == 1 && slider.value < slider.getAttribute("max")){
 
 	    rid = window.requestAnimationFrame(anim);
 
@@ -119,7 +147,7 @@ var play = function(){
 
 	if (slider.value == slider.getAttribute("max")){
 
-	    playPause(1);
+	    masterControl(1);
 	    playBtnIc.setAttribute("class", "glyphicon glyphicon-repeat");
 	    
 	}
@@ -130,16 +158,17 @@ var play = function(){
     
 }
 
+
+
 var rewind = function(){
     
     window.cancelAnimationFrame(rid);
 
-
     var anim = function(){setTimeout(function(){
 	    
 	slider.stepDown();	    
-	
-	if (playing && slider.value > slider.getAttribute("min")){
+	console.log("rewinding");
+	if (playing == -1 && slider.value > slider.getAttribute("min")){
 
 	    rid = window.requestAnimationFrame(anim);
 
@@ -147,7 +176,7 @@ var rewind = function(){
 
 	if (slider.value == slider.getAttribute("min")){
 
-	    playPause(-1);
+	    masterControl(-1);
 	    
 	}
 	
@@ -157,8 +186,27 @@ var rewind = function(){
     
 }
 
+var playButton = function(){
+    masterControl(1);
+}
+
+var rewindButton = function(){
+    masterControl(-1);
+}
 
 resetBtn.addEventListener("click", resetSlider);
-rewindBtn.addEventListener("click", rewind);
-playBtn.addEventListener("click", playPause);
+rewindBtn.addEventListener("click", rewindButton);
+playBtn.addEventListener("click", playButton);
 window.onLoad = resetSlider();
+addStates();
+
+//FOR NOBEL>>>
+var getSlider = function(){
+    return slider.value;
+}
+
+//1 for highschool, 0 for college
+var getDataset = function(){
+    if (hs.checked) return 1;
+    else return 0;
+}
