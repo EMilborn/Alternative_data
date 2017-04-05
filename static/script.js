@@ -198,8 +198,16 @@ var rewindButton = function(){
 resetBtn.addEventListener("click", resetSlider);
 rewindBtn.addEventListener("click", rewindButton);
 playBtn.addEventListener("click", playButton);
-window.onLoad = resetSlider();
-addStates();
+
+
+
+var onLoadFunctions = function(){
+    resetSlider();
+    hsRadio.checked = true;
+    addStates();
+}
+
+window.onLoad = onLoadFunctions();
 
 //FOR NOBEL>>>
 var getSlider = function(){
@@ -208,6 +216,6 @@ var getSlider = function(){
 
 //1 for highschool, 0 for college
 var getDataset = function(){
-    if (hs.checked) return 1;
+    if (hsRadio.checked) return 1;
     else return 0;
 }
