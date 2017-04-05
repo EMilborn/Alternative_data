@@ -1,3 +1,16 @@
+#colRadioWrap{
+    color: blue;
+   
+}
+
+#hsRadioWrap{
+    color: rgb(255,0,0);
+}
+
+#bothRadioWrap{
+    color: purple;
+}
+
 /*
 #radios{
     display:table;
