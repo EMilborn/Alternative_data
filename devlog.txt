@@ -19,3 +19,6 @@ kateJ -- 2017-04-02 17:00-18:00
 
 kateJ -- 2017-04-04 14:30-15:35
    data is now accessible from app.py
+
+joelY -- 2017-04-04 22:57
+   funciton created to import data to javascript
