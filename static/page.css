@@ -1,9 +1,22 @@
 /*
+#radios{
+    display:table;
+    table-layout:fixed;
+}
+
+#radiochild{
+    display:table-cell;
+    vertical-align:middle;
+    float:none;
+}
+
+
 #ctrlPanel {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items:center;
 }
-*/
+
 #svgContainer {}
+*/

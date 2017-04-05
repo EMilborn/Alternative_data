@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from utils import parser as data
+import json
 
 
 app = Flask(__name__)
@@ -27,6 +28,13 @@ def new():
 
     return render_template("page.html", states = result)
 
+@app.route("/getCollege")
+def collegeData():
+    return json.dumps(data.getCPercentages(year))
+
+@app.route("/getHS")
+def collegeData():
+    return json.dumps(data.getHPercentages(year))
 
 if __name__ == '__main__':
     app.debug = True

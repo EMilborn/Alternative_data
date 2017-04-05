@@ -20,26 +20,37 @@
   </head>
 
   <body>
-
+    <br>
     <div id="pagePlaceHolder" style="max-height: 95vh; display: flex; align-items: center; justify-content: center;">
       <h1 style = "font-weight: bold;">Smoking is Bad</h1>
     </div>
+    <br>
     <div class = "container-fluid">
       
       <div class="row" >
 	<div class="col-md-1">
 	</div>
-	<div class="col-md-2 text-right align-middle">
+	
+
+	<div class="col-md-3 text-right align-middle">
+	  <div>
+	    Data Source
+	  </div>
 	  <div class="radio">
 	    <label><input type="radio" name="optradio" id="hsRadio" defaultValue = "true">HS</label>
 	  </div>
 	  <div class="radio">
 	    <label><input type="radio" name="optradio" id="colRadio">College</label>
 	  </div>
+	  <div class="radio">
+	    <label><input type="radio" name="optradio" id="bothRadio">Both</label>
+	  </div>
 	</div>
-	<div class="col-md-9 text-left" align = "center">
+
+	
+	<div class="col-md-8 text-left" align = "center">
 	  <div id="svgContainer">
-	    <svg id="s" xmlns="http://www.w3.org/2000/svg" width = "1000", height = "500" style="border:1px solid #000000"/>
+	    <svg id="s" xmlns="http://www.w3.org/2000/svg" width = "1000", height = "500"/>
 	    
 	    
 	    <!--TEMPORARY BORDER-->
@@ -73,9 +84,35 @@
 	  <input type="range" step="1" min="2002" max="2015" id="timeSlider"/>
 	</div>
 
+	<div class="col-md-2 text-left" id="timeText">
+	</div>
       </div>
     </div>
 
+    <br>
+    <!--KATE INSERT INFORMATION HERE-->
+    <div class = "row">
+      <div class="col-md-3"></div>
+      <p class="col-md-6">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget elementum turpis. Sed viverra imperdiet purus, vitae fermentum turpis ultrices non. Aliquam aliquet leo ultricies accumsan auctor. Aenean et lorem cursus, fermentum tellus a, elementum sem. In suscipit id odio ac laoreet. Vivamus vestibulum neque id orci vehicula, et tristique sem consequat. Vivamus eu est quis urna porttitor egestas et ut nibh. Mauris lorem lectus, lacinia at odio non, suscipit consequat nisi.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <p class="col-md-6">
+	Aenean eu lacus blandit, ultrices felis aliquam, rhoncus quam. Sed eget nisl vulputate, hendrerit arcu a, porta lorem. Fusce mauris risus, consectetur sit amet est eu, feugiat aliquam purus. Vestibulum commodo rutrum elit vel maximus. Nulla commodo ut augue in molestie. Nulla facilisi. Phasellus facilisis ex lorem, elementum luctus est posuere quis. Ut finibus neque vitae augue blandit, sit amet viverra felis gravida. Aliquam luctus augue rhoncus, convallis elit nec, congue nibh. Mauris malesuada fermentum nibh. Aliquam nulla risus, gravida non purus nec, venenatis finibus libero. Cras mauris nunc, rutrum ut tellus a, fermentum auctor sem.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <p class="col-md-6">
+	Vestibulum posuere at lacus vel rhoncus. Fusce dolor tellus, elementum vitae sem ac, pretium volutpat nisi. Nunc luctus ante eget purus dignissim tempor. Praesent at placerat est. Morbi sit amet leo rhoncus, molestie erat eget, maximus erat. Suspendisse sed lobortis ex. Nullam imperdiet malesuada finibus. Vivamus id sem in mi tincidunt euismod. Phasellus lobortis sapien eu eros feugiat, ac mollis lectus cursus. Proin vestibulum metus est, vel congue nisi efficitur molestie. Sed tempor pretium ante ullamcorper luctus. Praesent vehicula auctor elit, et placerat nulla porta ut.
+
+
+      </p>
+    </div>
+    </div>
+    
     <br><br>
     <footer>
       <div class="container">
@@ -89,6 +126,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="../static/bootstrap/js/bootstrap.min.js"></script>
     <script src="../static/script.js"></script>
+    
     
   </body>
 

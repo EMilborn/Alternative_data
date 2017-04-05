@@ -9,6 +9,8 @@ var rid;
 var frameTime = 500;
 var hsRadio = document.getElementById("hsRadio");
 var colRadio = document.getElementById("colRadio");
+var bothRadio = document.getElementById("bothRadio");
+var timeText = document.getElementById("timeText");
 
 var addStates = function(){
     var width = 50;
@@ -80,6 +82,7 @@ var addStates = function(){
 var resetSlider = function(){
 
     slider.value = slider.getAttribute("min");
+    timeText.innerHTML = slider.value;
         
 }
 
@@ -137,8 +140,9 @@ var play = function(){
     //console.log("max = " + slider.getAttribute("max"));
     var anim = function(){setTimeout(function(){
 	    
-	slider.stepUp();	    
-	console.log("forwarding");
+	slider.stepUp();
+	timeText.innerHTML = slider.value;
+
 	if (playing == 1 && slider.value < slider.getAttribute("max")){
 
 	    rid = window.requestAnimationFrame(anim);
@@ -166,8 +170,9 @@ var rewind = function(){
 
     var anim = function(){setTimeout(function(){
 	    
-	slider.stepDown();	    
-	console.log("rewinding");
+	slider.stepDown();
+	timeText.innerHTML = slider.value;
+
 	if (playing == -1 && slider.value > slider.getAttribute("min")){
 
 	    rid = window.requestAnimationFrame(anim);
@@ -199,11 +204,37 @@ rewindBtn.addEventListener("click", rewindButton);
 playBtn.addEventListener("click", playButton);
 
 
+var dataBank = {};
+
+//DATA RETRIEVAL
+var retrieveData = function(){
+    $.ajax({
+	url: "/getCollege/",
+	type: "POST",
+	data: undefined,
+	success: function(d){
+	    dataBank["College"] = JSON.parse(d);
+	}
+    });
+    $.ajax({
+	url: "/getHS/",
+	type: "POST",
+	data: undefined,
+	success: function(d){
+	    dataBank["HS"] = JSON.parse(d);
+	}
+    });
+    
+    console.log(dataBank);
+}
+
+
 
 var onLoadFunctions = function(){
     resetSlider();
     hsRadio.checked = true;
     addStates();
+    retrieveData();
 }
 
 window.onLoad = onLoadFunctions();
@@ -213,8 +244,11 @@ var getSlider = function(){
     return slider.value;
 }
 
-//1 for highschool, 0 for college
+//0 for highschool, 1 for college, 2 for both
 var getDataset = function(){
-    if (hsRadio.checked) return 1;
-    else return 0;
+    if (hsRadio.checked) return 0;
+    else if (colRadio.checked) return 1;
+    else return 2;
 }
+
+
