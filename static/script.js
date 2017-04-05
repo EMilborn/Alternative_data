@@ -206,10 +206,14 @@ playBtn.addEventListener("click", playButton);
 
 var dataBank = {};
 
+//FOR NOBEL>>>
+var getSlider = function(){
+    return slider.value;
+}
 //DATA RETRIEVAL
 var retrieveData = function(){
     $.ajax({
-	url: "/getCollege/",
+	url: "/getCollege",
 	type: "POST",
 	data: {"year": getSlider()},
 	success: function(d){
@@ -217,7 +221,7 @@ var retrieveData = function(){
 	}
     });
     $.ajax({
-	url: "/getHS/",
+	url: "/getHS",
 	type: "POST",
 	data: {"year": getSlider()},
 	success: function(d){
@@ -239,10 +243,7 @@ var onLoadFunctions = function(){
 
 window.onLoad = onLoadFunctions();
 
-//FOR NOBEL>>>
-var getSlider = function(){
-    return slider.value;
-}
+
 
 //0 for highschool, 1 for college, 2 for both
 var getDataset = function(){
