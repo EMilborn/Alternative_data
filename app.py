@@ -16,6 +16,7 @@ def root():
 
 
 @app.route("/newData", methods=['POST','GET'])
+def new():
 
     request.args['year', 'school']
 
