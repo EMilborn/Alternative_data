@@ -219,7 +219,7 @@ var retrieveData = function(){
     $.ajax({
 	url: "/getHS/",
 	type: "POST",
-	data: {"year": getSlider()}
+	data: {"year": getSlider()},
 	success: function(d){
 	    dataBank["HS"] = JSON.parse(d);
 	}
